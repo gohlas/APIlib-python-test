@@ -22,7 +22,7 @@ setup(
     version='0.4.5',
     description='Lib to control sony devices with their soap api',
     author='Leo',
-    author_email='sonyapilib@mohr.io',
+    author_email='sonyapilib@xxxx',
     # use the URL to the github repo
     url='https://github.com/gohlas/APIlib-python-test',
     download_url='https://github.com/gohlas/APIlib-python-test/tar.gz',
