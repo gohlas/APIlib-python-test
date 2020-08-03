@@ -19,7 +19,7 @@ CURRENT_DIR = os.path.dirname(__file__)
 setup(
     name='sonyapilib',
     packages=['sonyapilib'],  # this must be the same as the name above
-    version='0.4.6',
+    version='0.4.5',
     description='Lib to control sony devices with their soap api',
     author='Leo',
     author_email='sonyapilib@xxxx',
