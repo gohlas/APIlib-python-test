@@ -915,9 +915,9 @@ class SonyDevice:
 
         data = """<u:SetAVTransportURI xmlns:u="urn:schemas-upnp-org:service:AVTransport:1">
             <InstanceID>0</InstanceID>
-            <CurrentURI>local://192.168.10.117:60151/I_14_02_0_-1_00_06_6_23_0_0</CurrentURI>
+            <CurrentURI>local://{0}::60151/I_14_02_0_-1_00_06_6_23_0_0</CurrentURI>
             <CurrentURIMetaData>[truncated]&lt;DIDL-Lite xmlns=&quot;urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/&quot; xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot; xmlns:upnp=&quot;urn:schemas-upnp-org:metadata-1-0/upnp/&quot; xmlns:dlna=&quot;urn:schemas-dln</CurrentURIMetaData>
-            </u:SetAVTransportURI>"""
+            </u:SetAVTransportURI>""".format(self.host)
 
         action = "urn:schemas-upnp-org:service:AVTransport:1#SetAVTransportURI"
 
@@ -927,7 +927,7 @@ class SonyDevice:
         self.input_play()
 
         return "HDMI 1"
-
+        
     def input_hdmi2(self):
         """Send HDMI input selection to the connected device"""
 
@@ -937,9 +937,9 @@ class SonyDevice:
 
         data = """<u:SetAVTransportURI xmlns:u="urn:schemas-upnp-org:service:AVTransport:1">
             <InstanceID>0</InstanceID>
-            <CurrentURI>local://192.168.10.117:60151/I_14_02_0_-1_00_07_7_23_0_0</CurrentURI>
+            <CurrentURI>local://{0}:60151/I_14_02_0_-1_00_07_7_23_0_0</CurrentURI>
             <CurrentURIMetaData>[truncated]&lt;DIDL-Lite xmlns=&quot;urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/&quot; xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot; xmlns:upnp=&quot;urn:schemas-upnp-org:metadata-1-0/upnp/&quot; xmlns:dlna=&quot;urn:schemas-dln</CurrentURIMetaData>
-            </u:SetAVTransportURI>"""
+            </u:SetAVTransportURI>""".format(self.host)
 
         action = "urn:schemas-upnp-org:service:AVTransport:1#SetAVTransportURI"
 
@@ -949,6 +949,8 @@ class SonyDevice:
         self.input_play()
 
         return "HDMI 2"
+        
+        print(input_hdmi2)
 
     def input_play(self):
         """Send input select to the connected device"""
