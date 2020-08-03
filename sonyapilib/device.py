@@ -903,8 +903,8 @@ class SonyDevice:
         self._send_command('List')
         
     def function(self):
-        """Send the command 'list' to the connected device."""
-        self._send_command('extInput:hdmi?port=0')
+        """Send the command 'function' to the connected device."""
+        self._send_command('Function')
 
     def input_hdmi1(self):
         """Send HDMI input selection to the connected device"""
