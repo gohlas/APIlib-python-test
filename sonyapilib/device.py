@@ -951,7 +951,79 @@ class SonyDevice:
         return "HDMI 2"
         
         print(input_hdmi2)
+        
+    def input_tv(self):
+        """Send TV input selection to the connected device"""
 
+        self.home()
+
+        time.sleep(1)
+
+        data = """<u:SetAVTransportURI xmlns:u="urn:schemas-upnp-org:service:AVTransport:1">
+            <InstanceID>0</InstanceID>
+            <CurrentURI>local://{0}:60151/I_14_02_0_-1_00_04_4_23_0_0</CurrentURI>
+            <CurrentURIMetaData>[truncated]&lt;DIDL-Lite xmlns=&quot;urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/&quot; xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot; xmlns:upnp=&quot;urn:schemas-upnp-org:metadata-1-0/upnp/&quot; xmlns:dlna=&quot;urn:schemas-dln</CurrentURIMetaData>
+            </u:SetAVTransportURI>""".format(self.host)
+
+        action = "urn:schemas-upnp-org:service:AVTransport:1#SetAVTransportURI"
+
+        content = self._post_soap_request(
+            url=self.av_transport_url, params=data, action=action)
+
+        self.input_play()
+
+        return "TV"
+        
+        print(input_tv)
+        
+    def input_bluetooth(self):
+        """Send Bluetooth input selection to the connected device"""
+
+        self.home()
+
+        time.sleep(1)
+
+        data = """<u:SetAVTransportURI xmlns:u="urn:schemas-upnp-org:service:AVTransport:1">
+            <InstanceID>0</InstanceID>
+            <CurrentURI>local://{0}:60151/I_96_02_0_-1_00_14_14_23_0_0</CurrentURI>
+            <CurrentURIMetaData>[truncated]&lt;DIDL-Lite xmlns=&quot;urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/&quot; xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot; xmlns:upnp=&quot;urn:schemas-upnp-org:metadata-1-0/upnp/&quot; xmlns:dlna=&quot;urn:schemas-dln</CurrentURIMetaData>
+            </u:SetAVTransportURI>""".format(self.host)
+
+        action = "urn:schemas-upnp-org:service:AVTransport:1#SetAVTransportURI"
+
+        content = self._post_soap_request(
+            url=self.av_transport_url, params=data, action=action)
+
+        self.input_play()
+
+        return "Bluetooth"
+        
+        print(input_bluetooth)
+        
+    def input_stereo(self):
+        """Send Stereo input selection to the connected device"""
+
+        self.home()
+
+        time.sleep(1)
+
+        data = """<u:SetAVTransportURI xmlns:u="urn:schemas-upnp-org:service:AVTransport:1">
+            <InstanceID>0</InstanceID>
+            <CurrentURI>local://{0}:60151/I_14_02_0_-1_00_09_9_23_0_0</CurrentURI>
+            <CurrentURIMetaData>[truncated]&lt;DIDL-Lite xmlns=&quot;urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/&quot; xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot; xmlns:upnp=&quot;urn:schemas-upnp-org:metadata-1-0/upnp/&quot; xmlns:dlna=&quot;urn:schemas-dln</CurrentURIMetaData>
+            </u:SetAVTransportURI>""".format(self.host)
+
+        action = "urn:schemas-upnp-org:service:AVTransport:1#SetAVTransportURI"
+
+        content = self._post_soap_request(
+            url=self.av_transport_url, params=data, action=action)
+
+        self.input_play()
+
+        return "Stereo"
+        
+        print(input_stereo)        
+        
     def input_play(self):
         """Send input select to the connected device"""
         data = """<u:Play xmlns:u="urn:schemas-upnp-org:service:AVTransport:1">
