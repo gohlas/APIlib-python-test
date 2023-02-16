@@ -25,7 +25,7 @@ setup(
     author_email='sonyapilib@xxxx',
     # use the URL to the github repo
     url='https://github.com/gohlas/APIlib-python-test',
-    download_url='https://github.com/gohlas/APIlib-python-test/archive/0.2.tar.gz',
+    download_url='https://github.com/gohlas/APIlib-python-test/archive/1.1.tar.gz',
     keywords=['soap', 'sony', 'api'],  # arbitrary keywords
     classifiers=[],
     setup_requires=[
